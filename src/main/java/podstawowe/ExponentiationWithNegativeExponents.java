@@ -11,26 +11,29 @@ public class ExponentiationWithNegativeExponents {
 
         Scanner skaner = new Scanner(System.in);
 
-        System.out.print("Podaj liczbe calkowita a : ");
-        int a = skaner.nextInt();
-        System.out.print("Podaj liczbe calkowita b : ");
-        int b = skaner.nextInt();
-        int result = 1;
+        Scanner input = new Scanner(System.in);
+        System.out.println("podaj liczbe calkowita:");
+        double number = input.nextDouble();
+        System.out.println("Podaj potege:");
+        double exponentation = input.nextDouble();
 
-        while (true) {
+        double result = 1;
 
-            if (b > 0) {
-                result = result * a;
-                b = b - 1;
+
+        if (exponentation > 0) {
+            while (exponentation > 0) {
+                result = result * number;
+                exponentation++;
             }
-            else if(b<0){
-                result = result * a;
-                b = b + 1;
-                
-
+            System.out.println((int)result);
+        } else {
+            while (exponentation<0){
+                result = result * number;
+                exponentation--;
 
             }
-            System.out.println(result);
+            System.out.println(1/result);
+
         }
 
 
